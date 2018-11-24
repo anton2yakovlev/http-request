@@ -1,16 +1,8 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.reflect.Type;
 import java.net.*;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.util.Base64;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 
-
-import java.util.List;
 
 public class RestAPI {
     public static String getXML(String filename) {
