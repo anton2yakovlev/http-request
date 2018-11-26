@@ -1,8 +1,8 @@
 public class Main {
 
     public static void main(String[] args) {
-        //System.out.println(RestAPI.getXML("test.xml", "/PurchaseOrder/Address/Name"));
-        System.out.println(RestAPI.putXML("test.xml","<?xml version=\"1.0\"?><Name>Ellen Adams</Name>\n<Street>123 Maple Street</Street>", "admin", "admin"));
-        //System.out.println(RestAPI.getXML("new.xml"));
+        System.out.println(RestAPI.getXML("test.xml"));
+        System.out.println(RestAPI.putXML("test.xml","<?xml version=\"1.0\"?><Test>Good</Test>", "admin", "admin"));
+        System.out.println(RestAPI.getXML("test.xml"));
     }
 }
