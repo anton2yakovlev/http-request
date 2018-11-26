@@ -28,7 +28,7 @@ public class RestAPI {
                 response.append(inputLine);
             }
             in.close();
-
+            connection.disconnect();
             return response.toString();
 
         } catch (Exception e) {
@@ -51,7 +51,7 @@ public class RestAPI {
                 response.append(inputLine);
             }
             in.close();
-
+            connection.disconnect();
             return response.toString();
 
         } catch (Exception e) {
@@ -60,38 +60,6 @@ public class RestAPI {
         }
     }
 
-    /*public String getAuthantication(String username, String password) {
-        String auth = new String(Base64.getEncoder().encode((username + ":" + password).getBytes());
-        return auth;
-    }*/
-
-    public static boolean putXML2(String filename, String XML, String user, String pass){
-        try {
-            String authStr = user + ":"+pass;
-            //byte [] authByteEnc = Base64.getEncoder().encode(authStr.getBytes());
-            //String authStrEnc = new String(authByteEnc);
-            String authStrEnc = URLEncoder.encode(authStr);
-            String urlString = "http://localhost:8080/exist/rest/db/test/"+filename;
-            URL url = new URL(urlString);
-            HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
-
-            httpCon.setDoOutput(true);
-            httpCon.setDoInput(true);
-            httpCon.setRequestProperty("Content-type", "application/xml");
-            httpCon.setRequestProperty("Authorization", "Basic " + authStrEnc);
-            httpCon.setRequestMethod("PUT");
-
-            OutputStreamWriter out = new OutputStreamWriter(httpCon.getOutputStream());
-            out.write(XML);
-            out.close();
-            httpCon.getInputStream();
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-
-    }
 
 
 
